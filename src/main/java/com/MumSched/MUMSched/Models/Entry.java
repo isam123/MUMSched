@@ -9,9 +9,17 @@ public class Entry {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
-    private Long id;
+    private Long Id;
     String name;
     LocalDate date;
+
+    public Long getId() {
+        return Id;
+    }
+
+    public Student getStudent() {
+        return student;
+    }
 
     @OneToOne(mappedBy = "entry", fetch = FetchType.LAZY)
     private Student student;
